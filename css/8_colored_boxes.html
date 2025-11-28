@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <Style>
+        #main{
+            width:900px;
+            height:200px;
+            background-color: #999;
+            border : 2px solid ;
+            margin : 0 auto;
+            display : flex ;
+        }
+        .box{
+            width : 200px;
+            height : 200px;
+            /* background-color: #555; */
+            margin-right : 25px;
+        }
+        
+            .box:nth-child(4){
+
+                margin-right : 2px;
+            }
+        
+            .box:nth-child(odd){
+                background-color:rgb(97, 223, 225);
+            }
+            .box:nth-child(even){
+                background-color : yellow;
+            }
+
+        
+
+    </Style>
+</head>
+<body>
+    <div id="main">
+        <div class="box">Box No.1</div>
+        <div class="box">Box No. 2</div>
+        <div class="box">Box No. 3</div>
+        <div class="box">Box No. 4</div>
+        <div class="box">Box No. 5</div>
+        <div class="box">Box No. 6</div>
+        <div class="box">Box No. 7</div>
+        <div class="box">Box No. 8</div>
+        
+        
+    </div>
+    
+    
+</body>
+</html>
