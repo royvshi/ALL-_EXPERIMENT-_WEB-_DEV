@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Profile Card</title>
+    <title>Student Profile Cards</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-
-            background: linear-gradient(to bottom right, #7b7284, #5694ff);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
         }
-
-        .card {
-            background-color: white;
-            width: 320px;
-            padding: 20px;
-            border-radius: 15px;
-
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            transition: 0.3s;
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#d9d5d5;
         }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        .outer-box{
+            width:90%;
+            border:2px solid #000;
+            padding:30px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
         }
-
-        .card img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 4px solid #2575fc;
+        .card-wrapper{
+            width:100%;
+            display:flex;
+            justify-content:space-evenly;
+            align-items:center;
+            gap:20px;
         }
-
-        .card h2 {
-            margin: 5px 0;
-            color: #333;
+        .card{
+            width:260px;
+            padding:25px 15px 30px;
+            background:#d1eaeb;
+            border-radius:10px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
         }
-
-        .subtitle {
-            color: #666;
-            font-size: 15px;
-            margin-bottom: 10px;
+        .circle{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            background:#283889;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:#fff;
+            font-weight:bold;
+            font-size:22px;
+            margin-bottom:15px;
         }
-
-        .info {
-            margin-top: 10px;
-            width: 100%;
+        .name{
+            font-weight:bold;
+            margin-bottom:8px;
         }
-
-        .info p {
-            margin: 8px 0;
-            font-size: 15px;
-            color: #333;
-            background: #eef2ff;
-            padding: 6px;
-            border-radius: 5px;
-        }
-
-        .info strong {
-            color: #2575fc;
+        .line{
+            font-size:14px;
+            margin-bottom:3px;
         }
     </style>
 </head>
-
 <body>
+<div class="outer-box">
+    <div class="card-wrapper">
 
-    <div class="card">
-        <img src="roypassportphoto.jpg" alt="Student Photo">
-
-        <h2>Royal Vshishtha</h2>
-        <p class="subtitle">B.Tech Student</p>
-
-        <div class="info">
-            <p><strong>Roll No:</strong> 2025b15310193</p>
-            <p><strong>Department:</strong> CSE AIML</p>
-            <p><strong>Year:</strong> 1st Year</p>
-            <p><strong>Email:</strong> royalvshishtha123@gmail.com</p>
+        <div class="card">
+            <div class="circle">RV</div>
+            <div class="name">Royal Vshishtha</div>
+            <div class="line">B.Tech - AIML</div>
+            <div class="line">Roll No: 2025B15310193</div>
+            <div class="line">1st Year</div>
         </div>
-    </div>
 
+        <div class="card">
+            <div class="circle">RV</div>
+            <div class="name">Roy Vardhan</div>
+            <div class="line">B.Tech - CSE</div>
+            <div class="line">Roll No: 2025B15310117</div>
+            <div class="line">1st Year</div>
+        </div>
+
+        <div class="card">
+            <div class="circle">RK</div>
+            <div class="name">Roy Kapoor</div>
+            <div class="line">B.Tech - EE</div>
+            <div class="line">Roll No: 2025B15310134</div>
+            <div class="line">1st Year</div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>
-
