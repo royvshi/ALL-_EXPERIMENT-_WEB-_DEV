@@ -1,131 +1,383 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-body{
-    background-color: rgb(204, 220, 224);
-}
-.card-container{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:100px;
-}
-.card{
-width:325px;
-background-color:#f0f0f0;
-border-radius:8px;
-overflow:hidden;
-box-shadow:0px 2px 4px rgba(0,0,0,0.2);
-}
-.card img{ 
-    justify-content: center;
-    width:200px;
-    height:100px;
-}
-.card-content h4{
-font-size:10px;
-margin-bottom:4px;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Style E‑Commerce</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+      background:#e3e6e6;
+    }
 
-.btn{ 
-    content: center;
-display: inline-block; 
-padding: 10px 15px; 
-margin-top: 10px; 
-background: #007bff; 
-color: #fff; 
-border: none; 
-border-radius: 5px; 
-cursor: pointer; 
-text-decoration: none; 
-}.btn:hover { 
-background: #ff1500; 
-} 
-    </style>
+    /* HEADER */
+    header{
+      background:#131921;
+      color:#fff;
+      padding:10px 20px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#f3a847;
+    }
+
+    .ma{
+      overflow: auto;
+    }
+
+    .search-box{
+      flex:1;
+      margin:0 20px;
+      display:flex;
+    }
+    .search-box input{
+      width:90%;
+      padding:10px;
+      border-radius: 10px 0 0 10px;
+    }
+    .search-box button{
+      padding:10px 15px;
+      border-radius: 0 10px 10px 0;
+      background:#febd69;
+      cursor:pointer;
+    }
+    .nav-links div{
+      margin-left:20px;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+    }
+
+    /* SUB NAV */
+    .sub-nav{
+      background:#232f3e;
+      color:#fff;
+      padding:8px 20px;
+      font-size:14px;
+    }
+    .sub-nav span{
+      margin-right:15px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      height:500px;
+    }
+
+    /* PRODUCTS */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding:20px;
+      margin-top:-80px;
+    }
+    .card{
+      background:#fff;
+      padding:15px;
+      border-radius:4px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3{
+      margin-bottom:10px;
+    }
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .card a{
+      display:block;
+      margin-top:10px;
+      color:#007185;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#131921;
+      color:#fff;
+      padding:30px 20px;
+      box-shadow: 0 -6px 30px -6px black;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+    footer h4{
+      margin-bottom:10px;
+    }
+    footer p{
+      font-size:14px;
+      margin-bottom:6px;
+      cursor:pointer;
+    }
+    .copyright{
+      text-align:center;
+      margin-top:20px;
+      font-size:13px;
+      color:#ccc;
+    }
+
+    @media(max-width:768px){
+      .search-box{display:none;}
+    }
+    .pro{
+        height:500px;
+        width: 100%;
+    }
+    .slider{
+            width: 100%;
+            height: 400px;
+            background: rgb(255, 255, 255);
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+        }
+        .slide:nth-child(1) { background-image: url("https://www.amazonlistingservice.com/wp-content/uploads/2018/01/als-slider.jpg"); }
+        .slide:nth-child(2) { background-image: url("https://img.freepik.com/free-psd/black-friday-super-sale-facebook-cover-banner-template_120329-5177.jpg?semt=ais_hybrid&w=740&q=80");
+      background-size: cover; background-position: center; }
+        .slide:nth-child(3) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .slide:nth-child(4) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+        input[type="radio"] { display: none; }
+
+        /* move container based on checked slide */
+        #slide1:checked ~ .slider-container { transform: translateX(0); }
+        #slide2:checked ~ .slider-container { transform: translateX(-100%); }
+        #slide3:checked ~ .slider-container { transform: translateX(-200%); }
+        #slide4:checked ~ .slider-container { transform: translateX(-300%); }
+
+        /* dots */
+        .controls {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .controls label {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        /* active dot when its slide is checked */
+        #slide1:checked ~ .controls label[for="slide1"],
+        #slide2:checked ~ .controls label[for="slide2"],
+        #slide3:checked ~ .controls label[for="slide3"],
+        #slide4:checked ~ .controls label[for="slide4"] {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* prev/next buttons (per-slide pairs) */
+        .nav-buttons { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); z-index: 10; pointer-events: none; display:flex; justify-content:space-between; padding: 0 10px; box-sizing: border-box; }
+        .nav-buttons label { pointer-events: auto; display: none; background: rgba(0,0,0,0.5); color: white; padding: 12px 16px; border-radius: 4px; cursor: pointer; }
+        /* show only the pair relevant to the checked slide */
+        #slide1:checked ~ .nav-buttons .prev1,
+        #slide1:checked ~ .nav-buttons .next1,
+        #slide2:checked ~ .nav-buttons .prev2,
+        #slide2:checked ~ .nav-buttons .next2,
+        #slide3:checked ~ .nav-buttons .prev3,
+        #slide3:checked ~ .nav-buttons .next3,
+        #slide4:checked ~ .nav-buttons .prev4,
+        #slide4:checked ~ .nav-buttons .next4 { display: inline-block; }
+        .nav-buttons label:hover { background: rgba(0,0,0,0.8); }
+
+        img{
+          margin:10px;
+          border: 10px solid transparent;
+          border-image: 90 round;
+        }
+        
+  </style>
 </head>
-<body><center>
-    <h1 text align="center"><font color="black"><big>Nike Shoes</big></font></h1>
-    <br>
-    <a href="website.html">Home</a>
-    </center>
-    <hr><br> <br>
-    <h1 text align="center"> <i>JUST DO IT.</i></h1>
-    <div class="card-container"> 
-<div class="card"> 
-    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQORqCE2NNobtGJVl9AQQ_l5eHDVDYuzadRjjeJDQ502wTGPBMn-PYPaM5z5WoVu3MoVLGAHYs8m0qSSyha70nzGp7VnOEEu6Drk9UQMCF6iASn9XCgLF9EgUQ" alt="">
-    <div class="card-content">
-    <h4>Nike Court Vision Low Next Nature Men's Shoes Size 8.5 (White)</h4>
-    <div class="price">₹4995</div> 
-    <a href="#" class="btn">Buy Now</a>
+<body>
+<div class="ma">
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">Amazon</div>
+      <div class="search-box">
+        <input type="text" placeholder="Search products" />
+        <button>🔍</button>
+      </div>
+      <div class="nav-links">
+        <div>Sign In</div>
+        <div>Orders</div>
+        <div>Cart 🛒</div>
+      </div>
     </div>
-    </div>
-<div class="card"> 
-    <img src="https://www.kicksmachine.com/cdn/shop/files/Nike-SB-Dunk-Low-Futura-Laboratories-Sunblush-Product_1389240f-8a53-432c-8ad2-f2c9ce705114.webp?v=1745063946&width=600" alt="">
-    <div class="card-content">
-    <h4>Nike Sb Dunk Low Futura Laboratories Sunblush (Friends And Family)</h4>
-    <div class="price">₹765,499.00</div> 
-<a href="#" class="btn">Buy Now</a>  
-</div>
-</div>
-<div class="card"> 
-    <img src="https://www.kicksmachine.com/cdn/shop/files/Air-Jordan-1-Retro-High-Dior-Product.webp?v=1762597184&width=600" alt="" height="250">
-    <div class="card-content">
-    <h4>Jordan 1 Retro High Dior</h4>
-    <div class="price">₹1,486,999.00</div>
-<a href="#" class="btn">Buy Now</a> 
-</div>
-</div>
-<div class="card"> 
-    <img src="https://dawntown.co.in/cdn/shop/files/ParraxDunkLowProSB_AbstractArt_1.webp?v=1759140100&width=1225 alt="" height="250">
-    <div class="card-content">
-    <h4>Air Jordan 1 Retro High OG 'Patent Bred</h4>
-    <div class="price">₹24999</div> 
-<a href="#" class="btn">Buy Now</a> 
-</div>
-</div>
-<div class="card"> 
-    <img src="https://www.kicksmachine.com/cdn/shop/files/Nike-SB-Dunk-Low-Travis-Scott-Product_ba47734f-3a06-4485-ab3d-52d381422945.webp?v=1745064689&width=600" alt="" height="250">
-    <div class="card-content">
-    <h4>Nike Sb Dunk Low Travis Scott</h4>
-    <div class="price">₹1,747,499.00</div> 
-<a href="#" class="btn">Buy Now</a> 
-</div>
-</div> 
-<div class="card"> 
-    <img src="https://www.kicksmachine.com/cdn/shop/files/Nike-SB-Dunk-Low-Grateful-Dead-Bears-Orange-Product_285ea157-c495-4b63-a089-e1d6bb86bbab.webp?v=1745063976&width=600" alt="" height="250">
-    <div class="card-content">
-    <h4>Nike Sb Dunk Low Grateful Dead Bears Orange</h4>
-    <div class="price">₹1,085,999.00</div> 
-<a href="#" class="btn">Buy Now</a> 
-</div>
-</div>
-<div class="card"> 
-    <img src="https://dawntown.co.in/cdn/shop/files/NikeSBxAirJordan4RetroPineGreen1.webp?v=1759062484&width=1225" alt="" height="250">
-    <div class="card-content">
-    <h4>Nike SB x Air Jordan 4 Retro "Pine Green"</h4>
-    <div class="price">₹48,000.00</div> 
-<a href="#" class="btn">Buy Now</a>
-</div> 
-</div>
-<div class="card"> 
-    <img src="https://dawntown.co.in/cdn/shop/files/jordan-4-retro-red-thunder-717707.webp?v=1749480199&width=1225" alt="" height="250">
-    <div class="card-content">
-    <h4>Jordan 4 Retro "Red Thunder"</h4>
-    <div class="price">₹29,778.00</div> 
-<a href="#" class="btn">Buy Now</a>
-</div>
-</div> 
+  </header>
 
+  <!-- SUB NAV -->
+  <div class="sub-nav">
+    <span>All</span>
+    <span>Mobiles</span>
+    <span>Electronics</span>
+    <span>Fashion</span>
+    <span>Home</span>
+    <span>Deals</span>
+  </div>
+
+  <!-- HERO -->
+   <div class="main">
+  <div class="hero">
+    <section class="slider">
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            <input type="radio" name="slide" id="slide4">
+
+            <div class="slider-container">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+
+            <div class="nav-buttons">
+                <!-- slide 1 buttons -->
+                <label class="prev prev1" for="slide4">❮</label>
+                <label class="next next1" for="slide2">❯</label>
+
+                <!-- slide 2 buttons -->
+                <label class="prev prev2" for="slide1">❮</label>
+                <label class="next next2" for="slide3">❯</label>
+
+                <!-- slide 3 buttons -->
+                <label class="prev prev3" for="slide2">❮</label>
+                <label class="next next3" for="slide4">❯</label>
+
+                <!-- slide 4 buttons -->
+                <label class="prev prev4" for="slide3">❮</label>
+                <label class="next next4" for="slide1">❯</label>
+            </div>
+
+            <div class="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+        </section>
+  </div>
+
+  <!-- PRODUCTS -->
+   <div class="pro">
+  <section class="products">
+    <div class="card">
+      <h3>Electronics</h3>
+      <img src="https://thumbs.dreamstime.com/b/gadgets-accessories-gadgets-accessories-isolated-white-background-133429004.jpg" />
+      <a href="#">Shop now</a>
+    </div>
+    <div class="card">
+      <h3>Fashion</h3>
+      <img src="https://static.fibre2fashion.com//articleresources/images/71/7074/SAdobeStock_247321133_Small.jpg" />
+      <a href="#">Explore deals</a>
+    </div>
+    <div class="card">
+      <h3>Home & Kitchen</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0yU25Zv2MYSQ26KunF3D7uU1JNraZ8XsqRQ&s" />
+      <a href="#">See more</a>
+    </div>
+    <div class="card">
+      <h3>Gaming</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLcgCJ01mhqKQe17Cj0tyUKGTbLBbdCz3WQ&s" />
+      <a href="#">Buy now</a>
+    </div>
+    <div class="card">
+      <h3>Electronics</h3>
+      <img src="https://thumbs.dreamstime.com/b/gadgets-accessories-gadgets-accessories-isolated-white-background-133429004.jpg" />
+      <a href="#">Shop now</a>
+    </div>
+    <div class="card">
+      <h3>Fashion</h3>
+      <img src="https://static.fibre2fashion.com//articleresources/images/71/7074/SAdobeStock_247321133_Small.jpg" />
+      <a href="#">Explore deals</a>
+    </div>
+    <div class="card">
+      <h3>Home & Kitchen</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0yU25Zv2MYSQ26KunF3D7uU1JNraZ8XsqRQ&s" />
+      <a href="#">See more</a>
+    </div>
+    <div class="card">
+      <h3>Gaming</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLcgCJ01mhqKQe17Cj0tyUKGTbLBbdCz3WQ&s" />
+      <a href="#">Buy now</a>
+    </div>
+  </section>
+  </div>
+  </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Get to Know Us</h4>
+        <p>About Us</p>
+        <p>Careers</p>
+        <p>Press</p>
+      </div>
+      <div>
+        <h4>Connect with Us</h4>
+        <p>Facebook</p>
+        <p>Twitter</p>
+        <p>Instagram</p>
+      </div>
+      <div>
+        <h4>Make Money with Us</h4>
+        <p>Sell on amazon</p>
+        <p>Affiliate Program</p>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <p>Your Account</p>
+        <p>Returns</p>
+        <p>Customer Care</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 amazon Clone</div>
+  </footer>
 
 </body>
 </html>
